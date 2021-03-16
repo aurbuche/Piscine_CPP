@@ -57,7 +57,21 @@ void	Infos::display(int i) {
 	std::cout << disp(last_name);
 	std::cout << "|";
 	std::cout << disp(nickname);
-	std::cout << "|";
+	std::cout << "|" << std::endl;
+}
+
+void	Infos::infos(){
+	std::cout << "First name: " << first_name << std::endl;
+	std::cout << "Last name: " << last_name << std::endl;
+	std::cout << "Nickname: " << nickname << std::endl;
+	std::cout << "Login: " << login << std::endl;
+	std::cout << "Postal address: " << postal_address << std::endl;
+	std::cout << "Email address: " << email_address << std::endl;
+	std::cout << "Phone number: " << phone_number << std::endl;
+	std::cout << "Birthday date: " << birthday_date << std::endl;
+	std::cout << "Favortie meal: " << favorite_meal << std::endl;
+	std::cout << "Underwear color: " << underwear_color << std::endl;
+	std::cout << "Darkest secret: " << darkest_secret << std::endl;
 }
 
 int		main(void)
@@ -65,9 +79,11 @@ int		main(void)
 	Infos Contact[MAX_CONTACT];
 
 	int	n;
+	int	index;
 	std::string mode;
 
 	n = 0;
+	index = 0;
 	std::cout << "Select the mode: ADD, SEARCH or EXIT" << std::endl;
 	while (std::getline(std::cin, mode))
 	{
@@ -88,11 +104,23 @@ int		main(void)
 		}
 		else if (!mode.compare("SEARCH"))
 		{
-			std::cout << "---------------------------------------------" << std::endl;
-			std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
-			for (int i = 0; i < n; i++)
-				Contact[i].display(i);
-			std::cout << std::endl << "---------------------------------------------" << std::endl;
+			if (n > 0)
+			{
+				std::cout << "---------------------------------------------" << std::endl;
+				std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
+				for (int i = 0; i < n; i++)
+					Contact[i].display(i);
+				std::cout << "---------------------------------------------" << std::endl;
+				std::cout << "Select the contact that you want to see the information:" << std::endl;
+				std::cin >> index;
+				std::cin.ignore();
+				if (index - 1 > n)
+					std::cout << "The contact doesn't exist!" << std::endl;
+				else
+					Contact[index - 1].infos();
+			}
+			else
+				std::cout << "No contacts to display!" << std::endl;
 		}
 		else
 			std::cout << "Unknown mode!" << std::endl << std::endl;

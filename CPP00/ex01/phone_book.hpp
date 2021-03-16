@@ -24,12 +24,7 @@ class	Infos {
 
 		void add();
 		void display(int i);
+		void infos();
 };
 
 #endif
-
-
-//std::string astring(" Test Test Test ");
-//std::remove(astring.begin(), astring.end(), ' ');
-//std::cout << astring << std::endl;
-
