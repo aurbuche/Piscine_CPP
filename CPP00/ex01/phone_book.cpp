@@ -69,15 +69,14 @@ int		main(void)
 
 	n = 0;
 	std::cout << "Select the mode: ADD, SEARCH or EXIT" << std::endl;
-	std::getline (std::cin, mode);
-	while (1)
+	while (std::getline(std::cin, mode))
 	{
-		mode.tr
 		if (!mode.compare("EXIT"))
 		{
+			std::cout << "Good bye!" << std::endl;
 			exit(0);
 		}
-		if (!mode.compare("ADD"))
+		else if (!mode.compare("ADD"))
 		{
 			if (n < MAX_CONTACT)
 			{
@@ -93,12 +92,11 @@ int		main(void)
 			std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
 			for (int i = 0; i < n; i++)
 				Contact[i].display(i);
-			std::cout << "---------------------------------------------" << std::endl;
+			std::cout << std::endl << "---------------------------------------------" << std::endl;
 		}
 		else
 			std::cout << "Unknown mode!" << std::endl << std::endl;
 		std::cout << std::endl << "Select the mode: ADD, SEARCH or EXIT" << std::endl;
-		std::getline (std::cin, mode);
 	}
 	std::cout << "Good bye!" << std::endl;
 	return 0;
