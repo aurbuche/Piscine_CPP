@@ -9,7 +9,7 @@ Pony::Pony(std::string name, std::string colour, std::string height)
 
 Pony::~Pony()
 {
-	std::cout << "The little pony just died" << std::endl;
+	std::cout << name << " just died" << std::endl;
 }
 
 void	Pony::print_data()

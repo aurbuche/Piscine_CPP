@@ -1,31 +1,23 @@
 #include "Pony.hpp"
 
-//void	ponyOnTheStack()
-//{
-//	Pony	ponyone;
-//
-//	ponyone.add("Billy", "grey", "little");
-//	ponyone.print_data();
-//	std::cout << std::endl;
-//}
-
-void	ponyOnTheHeap()
+Pony	ponyOnTheStack()
 {
-	Pony	*ponytwo;
-	Pony	*ponycopy;
+	Pony	ponyone = Pony("Billy", "grey", "little");
+	return ponyone;
+}
 
-	ponytwo = new Pony("Poulet", "Brown", "Big");
-	ponytwo->print_data();
-	ponycopy = new ponytwo;
-//	ponycopy->print_data();
-	delete ponytwo;
-//	delete ponycopy;
+Pony	*ponyOnTheHeap()
+{
+	Pony	*ponytwo = new Pony("Poulet", "Brown", "Big");
+	return ponytwo;
 }
 
 int	main()
 {
-//	ponyOnTheStack();
-	ponyOnTheHeap();
-
+	Pony ponyone = ponyOnTheStack();
+	Pony *ponytwo = ponyOnTheHeap();
+	ponyone.print_data();
+	ponytwo->print_data();
+	delete ponytwo;
 	return 0;
 }

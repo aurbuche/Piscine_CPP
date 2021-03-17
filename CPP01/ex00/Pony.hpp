@@ -4,7 +4,6 @@
 # include <cctype>
 # include <iostream>
 # include <cstring>
-# include <cstdio>
 
 class	Pony{
 private:
