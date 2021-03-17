@@ -1,14 +1,22 @@
 #ifndef ZOMBIE_EVENT_HPP
-# define ZZOMBIE_EVENT_HPP
+# define ZOMBIE_EVENT_HPP
 
 # include <cctype>
 # include <iostream>
 # include <cstring>
 # include "Zombie.hpp"
 
-class Zombie_Event {
-private:
-
+class ZombieEvent {
 public:
-	setZombieType();
+	ZombieEvent();
+	~ZombieEvent();
+	Zombie* newZombie(std::string name);
+	Zombie* randomChump();
+	void setZombieType(std::string type);
+	void setName(std::string name);
+
+private:
+	std::string ZombieType;
 };
+
+#endif

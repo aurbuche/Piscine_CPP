@@ -4,12 +4,13 @@
 # include <cctype>
 # include <iostream>
 # include <cstring>
+# include "ZombieHorde.hpp"
 
 class Zombie {
 public:
 	Zombie(std::string name, std::string type);
 	~Zombie();
-	void announce();
+//	void announce();
 
 private:
 	std::string type;
