@@ -8,9 +8,17 @@
 class	Brain
 {
 	public:
-		void identify();
+		Brain();
+		~Brain();
+		std::string identify();
+		void setIQ(int IQ);
+		int	getIQ(void);
+		void setWeight(int IQ);
+		int	getWeight(void);
 
 	private:
 		int IQ;
 		int weight;
 };
+
+#endif
