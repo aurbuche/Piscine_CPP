@@ -4,17 +4,23 @@
 # include <cctype>
 # include <iostream>
 # include <cstring>
-# include "ZombieHorde.hpp"
 
-class Zombie {
-public:
-	Zombie(std::string name, std::string type);
-	~Zombie();
-//	void announce();
+class Zombie
+{
+	public:
+		Zombie();
+		Zombie(std::string name, std::string type);
+		~Zombie();
 
-private:
-	std::string type;
-	std::string name;
+		std::string			getname(void);
+		void				setname(std::string name);
+		std::string			gettype(void);
+		void				settype(std::string type);
+		void				announceZombie();
+
+	private:
+		std::string type;
+		std::string name;
 };
 
 #endif

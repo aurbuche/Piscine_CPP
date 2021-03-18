@@ -10,18 +10,13 @@ class ZombieHorde
 	public:
 		ZombieHorde(int n);
 		~ZombieHorde(void);
-
-//		GETTER // SETTER
-
-		std::string			getname(void);
-		void				setname(std::string name);
-		std::string			gettype(void);
-		void				settype(std::string type);
-		void				announce();
+		Zombie	randomChump(int irand);
+		void	setType(std::string type);
+		void	announce();
 
 	private:
-		std::string			z_name;
-		std::string			z_type;
+		int		size;
+		Zombie* Horde;
 };
 
 #endif

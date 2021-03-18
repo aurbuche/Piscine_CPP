@@ -1,16 +1,10 @@
-#include "Zombie.hpp"
+//#include "Zombie.hpp"
+#include "ZombieHorde.hpp"
 
 int main()
 {
-	ZombieHorde Horde;
-	int	c = 0;
-
-	while (c < n)
-	{
-
-	}
-	zombieHorde.setname("Pascal");
-	zombieHorde.settype("Pilier de bar");
-	zombieHorde.announce();
+	ZombieHorde *horde = new ZombieHorde(5);
+	horde->announce();
+	delete horde;
 	return 0;
 }
