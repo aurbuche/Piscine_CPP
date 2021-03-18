@@ -4,21 +4,18 @@
 # include <cctype>
 # include <iostream>
 # include <cstring>
+# include <sstream>
+# include <cstdlib>
 
 class	Brain
 {
 	public:
 		Brain();
 		~Brain();
-		std::string identify();
-		void setIQ(int IQ);
-		int	getIQ(void);
-		void setWeight(int IQ);
-		int	getWeight(void);
+		const void* identify() const;
 
 	private:
-		int IQ;
-		int weight;
+		const void* address;
 };
 
 #endif
