@@ -3,6 +3,7 @@
 Brain::Brain()
 {
 	std::cout << "The brain is create!" << std::endl;
+	address = this;
 }
 
 Brain::~Brain()
@@ -11,6 +12,5 @@ Brain::~Brain()
 }
 
 const void*	Brain::identify() const {
-	address = this;
 	return address;
 }

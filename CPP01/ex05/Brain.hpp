@@ -4,8 +4,6 @@
 # include <cctype>
 # include <iostream>
 # include <cstring>
-# include <sstream>
-# include <cstdlib>
 
 class	Brain
 {

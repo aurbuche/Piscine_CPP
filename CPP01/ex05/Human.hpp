@@ -15,11 +15,9 @@ public:
 	~Human();
 	const void* identify() const;
 	const Brain& getBrain(void) const;
-
+	const Brain brain;
 
 private:
-	const Brain brain;
-	const void* address;
 };
 
 #endif
