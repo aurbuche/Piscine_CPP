@@ -12,11 +12,13 @@ int	main(int ac, char **av)
 	std::ifstream ifs;
 	std::ofstream ofs;
 	std::string fc;
+	std::string str;
 	std::string ToReplace = av[2];
 	std::string ByReplace = av[3];
 	std::string filename = av[1];
 	std::string final;
 	size_t len = ToReplace.length();
+	int pos;
 	ifs.open(av[1]);
 	if (!ifs.is_open())
 	{
@@ -24,20 +26,15 @@ int	main(int ac, char **av)
 		return 1;
 	}
 	ofs.open(filename + ".replace");
-	while (!ifs.eof())
-	{
-		std::getline(ifs, fc);
-		int pos = fc.find(ToReplace);
-//		int pos;
-//		while ((pos = fc.find(ToReplace) != std::string::npos))
-//		{
-			if (pos == -1)
-				final.append(fc);
-			else
-				final.append(fc.replace(pos, len, ByReplace));
-//			pos += ByReplace.length();
-//		}
-		final.append("\n");
+	int i = 0;
+	while (!ifs.eof()) {
+		if (i > 0)
+			final.append("\n");
+		std::getline(ifs, str);
+		while ((pos = str.find(ToReplace)) != -1)
+			str.replace(pos, len, ByReplace);
+		final.append(str);
+		i++;
 	}
 	ofs << final;
 	ifs.close();
