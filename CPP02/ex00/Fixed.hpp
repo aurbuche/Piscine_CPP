@@ -14,7 +14,7 @@ public:
 
 private:
 	int m_rawbits;
-	static const int m_nfractbits = 0;
+	static const int m_nfractbits = 8;
 };
 
 #endif

@@ -1,8 +1,6 @@
 #include "Fixed.hpp"
 
-const int Fixed::m_nfractbits = 0;
-
-Fixed::Fixed(void) : m_rawbits(8)
+Fixed::Fixed(void) : m_rawbits(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
