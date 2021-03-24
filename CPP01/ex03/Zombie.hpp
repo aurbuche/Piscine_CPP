@@ -17,10 +17,12 @@ class Zombie
 		std::string			gettype(void);
 		void				settype(std::string type);
 		void				announceZombie();
+		std::string    		getRandomName(void);
 
-	private:
-		std::string type;
-		std::string name;
+
+private:
+		std::string m_name;
+		std::string m_type;
 };
 
 #endif

@@ -1,10 +1,9 @@
 //#include "Zombie.hpp"
 #include "ZombieHorde.hpp"
 
-int main()
+int	main()
 {
-	ZombieHorde *horde = new ZombieHorde(5);
-	horde->announce();
-	delete horde;
-	return 0;
+	ZombieHorde* test = new ZombieHorde(12);
+	test->announce();
+	delete test;
 }

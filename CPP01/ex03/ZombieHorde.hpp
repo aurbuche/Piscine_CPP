@@ -10,9 +10,9 @@ class ZombieHorde
 	public:
 		ZombieHorde(int n);
 		~ZombieHorde(void);
-		Zombie	randomChump(int irand);
+		Zombie*	randomChump(int irand);
 		void	setType(std::string type);
-		void	announce();
+		void	announce() const;
 
 	private:
 		int		size;
