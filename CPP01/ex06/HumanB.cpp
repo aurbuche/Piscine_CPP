@@ -4,9 +4,8 @@ HumanB::HumanB()
 {
 }
 
-HumanB::HumanB(std::string name)
+HumanB::HumanB(std::string name) :m_name(name)
 {
-	m_name = name;
 }
 
 HumanB::~HumanB()
