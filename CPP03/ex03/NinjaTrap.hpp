@@ -2,6 +2,8 @@
 # define NINJATRAP_HPP
 
 # include "ClapTrap.hpp"
+# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
 # include <iostream>
 
 class NinjaTrap : public ClapTrap {
@@ -11,9 +13,11 @@ public:
 	NinjaTrap(NinjaTrap &copy);
 	~NinjaTrap();
 	NinjaTrap &operator=(NinjaTrap &assigned);
+	void	ninjaShoeBox(ClapTrap &target);
+	void	ninjaShoeBox(ScavTrap &target);
+	void	ninjaShoeBox(FragTrap &target);
+	void	ninjaShoeBox(NinjaTrap &target);
 
-private:
-	void	ninjaShoeBox(std::string target);
 };
 
 #endif

@@ -1,11 +1,13 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void)
+	: ClapTrap("default", 100, 100, 50, 50, 20, 15, 3)
 {
 	std::cout << name << ": \"Hello darling!\"" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name)
+	: ClapTrap(name, 100, 100, 50, 50, 20, 15, 3)
 {
 	std::cout << name << ": \"Hello darling!\"" << std::endl;
 }

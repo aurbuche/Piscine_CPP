@@ -4,8 +4,6 @@
 # include <iostream>
 
 class ClapTrap {
-private:
-
 protected:
 	int HitPoints;
 	int MaxHitPoints;

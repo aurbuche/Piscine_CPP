@@ -1,11 +1,15 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap()
-: HitPoints(100), MaxHitPoints(100), EnergyPoint(100), MaxEnergyPoints(100),
-			Level(1), name("Computer"), MeleeAttackDamage(30), RangedAttackDamage(20),
-			ArmorDamageReduction(5)
 {
 	std::cout << "CL4P-TP has been create!" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string n_name, int hp, int mhp, int mana, int mmana, int ad, int adr, int armor)
+: HitPoints(hp), MaxHitPoints(mhp), EnergyPoint(mana), MaxEnergyPoints(mmana),Level(1), name(n_name),
+	MeleeAttackDamage(ad), RangedAttackDamage(adr),	ArmorDamageReduction(armor)
+{
+	std::cout << "CL4P-TP has been created! " <<std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
@@ -79,4 +83,8 @@ void 	ClapTrap::beRepaired(unsigned int amount) {
 		}
 		std::cout << name << " took a super potion. It gives " << amount << " of HP!\n";
 	}
+}
+
+std::string ClapTrap::getName(void){
+	return (name);
 }

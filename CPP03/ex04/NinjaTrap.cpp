@@ -2,12 +2,12 @@
 
 NinjaTrap::NinjaTrap(void)
 {
-	std::cout << name << "initialized..." << std::endl;
+	std::cout << name << " initialized..." << std::endl;
 }
 
 NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name, 60, 60, 120, 120, 60, 5, 0)
 {
-	std::cout << name << "initialized..." << std::endl;
+	std::cout << name << " initialized..." << std::endl;
 }
 
 NinjaTrap::~NinjaTrap(void)

@@ -1,8 +1,7 @@
 #ifndef SUPERTRAP_HPP
 # define SUPERTRAP_HPP
-# include <iostream>
+
 # include "FragTrap.hpp"
-# include "ClapTrap.hpp"
 # include "NinjaTrap.hpp"
 # include "ScavTrap.hpp"
 
@@ -14,10 +13,9 @@ class SuperTrap : public FragTrap, public NinjaTrap
 		SuperTrap(const SuperTrap &rhs);
 		~SuperTrap(void);
 		SuperTrap			&operator=(const SuperTrap &rhs);
-
-//		GETTER // SETTER
-
-	private:
+		void	setAtt(std::string name);
+		void	meleeAttack(std::string const & target);
+		void	rangedAttack(std::string const & target);
 };
 
 #endif

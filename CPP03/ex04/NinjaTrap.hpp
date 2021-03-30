@@ -6,7 +6,7 @@
 # include "FragTrap.hpp"
 # include <iostream>
 
-class NinjaTrap : public ClapTrap {
+class NinjaTrap : virtual public ClapTrap {
 public:
 	NinjaTrap();
 	NinjaTrap(std::string name);
@@ -17,6 +17,7 @@ public:
 	void	ninjaShoeBox(ScavTrap &target);
 	void	ninjaShoeBox(FragTrap &target);
 	void	ninjaShoeBox(NinjaTrap &target);
+
 
 };
 
