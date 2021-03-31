@@ -11,9 +11,8 @@ ZombieEvent::~ZombieEvent()
 
 void		ZombieEvent::setZombieType(std::string type)
 {
-	std:: cout << "My last type was: " << ZombieType << std::endl;
 	ZombieType = type;
-	std::cout << "And now my new type is: " << ZombieType << std::endl;
+	std::cout << "My new type is: " << ZombieType << std::endl;
 }
 
 Zombie*		ZombieEvent::newZombie(std::string name)
@@ -28,6 +27,6 @@ Zombie*		ZombieEvent::randomChump()
 
 	int randindex = rand() % 10;
 	std::string zname = name[randindex];
-	Zombie* zombie = new Zombie(ZombieType, zname);
+	Zombie* zombie = new Zombie(zname, ZombieType);
 	return zombie;
 }

@@ -1,10 +1,9 @@
 #include "Pony.hpp"
 
 Pony::Pony(std::string name, std::string colour, std::string height)
+	: name(name), colour(colour), height(height)
 {
-	this->name = name;
-	this->colour = colour;
-	this->height = height;
+	std::cout << "Pony create!\n";
 }
 
 Pony::~Pony()

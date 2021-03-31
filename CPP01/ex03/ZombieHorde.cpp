@@ -1,43 +1,23 @@
 #include "ZombieHorde.hpp"
+#include "Zombie.hpp"
 
-Zombie*		ZombieHorde::randomChump()
+ZombieHorde::ZombieHorde(int n) :size(n)
 {
-	std::string name[10] = {"Zack", "Edouard", "Pierre", "Sylvain", "Philippe", "Olivier", "Patrick", "Xavier", "Thomas", "Aurelien"};
-
-	int randindex = rand() % 10;
-	std::string zname = name[randindex];
-	Zombie zombie = Zombie(name, "unknown");
-	return zombie;
+	std::cout << "Horde in creation..." << std::endl;
+	this->Horde = new Zombie[size];
 }
 
-ZombieHorde::ZombieHorde(int n)
+ZombieHorde::~ZombieHorde(void)
 {
-	int irand;
-	int     i;
-	Horde = new Zombie[n];
-	i = -1;
-	srand (time(NULL));
-	size = n;
-	while (++i < n)
-	{
-		irand = rand() % 10;
-		Horde[i] = randomChump(irand);
-		Horde[i].announceZombie();
-	}
-}
-
-ZombieHorde::~ZombieHorde()
-{
-	delete Horde[];
 	std::cout << "The horde is on the run!" << std::endl;
+	delete [] this->Horde;
 }
 
-void		announce()
+void		ZombieHorde::announce(void) const
 {
-	int     i;
+	int     i = 0;
 
-	i = 0;
-	while (i < n)
+	while (i < size)
 	{
 		Horde[i].announceZombie();
 		i++;
