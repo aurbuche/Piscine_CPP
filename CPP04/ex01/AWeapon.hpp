@@ -8,7 +8,7 @@ public:
 	AWeapon(void);
 	AWeapon(std::string const & name, int apcost, int damage);
 	AWeapon(const AWeapon &rhs);
-	~AWeapon(void);
+	virtual ~AWeapon(void);
 	AWeapon				&operator=(const AWeapon &rhs);
 
 //	GETTER // SETTER
@@ -20,18 +20,15 @@ public:
 	int					getAP(void) const;
 	void				setAP(int const value);
 	void				getAtt();
-//	std::string			getSound(void) const;
-//	void				setSound(std::string const value);
-//	std::string			getLightingEffect(void);
-//	void				setLightingEffect(std::string value);
-//	virtual void		attack() const = 0;
+	std::string			getSound(void) const;
+	void				setSound(std::string const value);
+	virtual void		attack() const = 0;
 
 protected:
 	std::string			m_name;
 	int					m_AP;
 	int					m_damage;
-//	std::string			m_sound;
-//	std::string			m_lightingEffect;
+	std::string			m_sound;
 };
 
 #endif

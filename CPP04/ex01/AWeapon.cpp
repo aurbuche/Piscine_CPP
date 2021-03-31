@@ -23,8 +23,7 @@ AWeapon				&AWeapon::operator=(const AWeapon &rhs)
 	this->m_name = rhs.m_name;
 	this->m_damage = rhs.m_damage;
 	this->m_AP = rhs.m_AP;
-//	this->m_sound = rhs.m_sound;
-//	this->m_sg = rhs.m_sg;
+	this->m_sound = rhs.m_sound;
 	return (*this);
 }
 
@@ -68,20 +67,12 @@ void				AWeapon::getAtt() {
 	std::cout << getName() << " cost " << getAP() << " and distresses " << getDamage() << "HP." << std::endl;
 }
 
-//std::string			AWeapon::getSound(void) const
-//{
-//	return (m_sound);
-//}
-//
-//void				AWeapon::setSound(std::string const value)
-//{
-//	m_sound = value;
-//}
-//
-//std::string			AWeapon::getLightingEffect() {
-//	return m_LightingEffect;
-//}
-//
-//void				AWeapon::setLightingEffect(std::string value) {
-//	m_lightingEffect = value;
-//}
+std::string			AWeapon::getSound(void) const
+{
+	return (m_sound);
+}
+
+void				AWeapon::setSound(std::string const value)
+{
+	m_sound = value;
+}
