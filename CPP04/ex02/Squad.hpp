@@ -9,10 +9,14 @@ class Squad : public ISquad
 		Squad(void);
 		Squad(const Squad &rhs);
 		~Squad(void);
-		Squad				&operator=(const Squad &rhs);
+		Squad				&operator=(const ISquad &rhs);
+		int				getCount(void) const;
+		ISpaceMarine*	getUnit(int N) const;
+		int				push(ISpaceMarine* unit);
 
 	private:
-		int m_count;
+		int _count;
+		ISpaceMarine **_unit;
 
 };
 
