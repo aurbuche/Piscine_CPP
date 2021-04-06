@@ -1,26 +1,26 @@
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
-# include <iostrea>
-# include "AMateria.hpp"
+# include <iostream>
+# include "ICharacter.hpp"
 
 class Character
 {
 	public:
 		Character(void);
-		Character(const Character &rhs);
+		Character(const Character &src);
 		~Character(void);
 		Character			&operator=(const Character &rhs);
 
 //		GETTER // SETTER
 
-		AMateria			getInventory(void) const;
-		void				setInventory(AMateria const value);
-		std::strig			getName(void) const;
-		void				setName(std::strig const value);
+//		AMateria			getInventory[4] (void) const;
+//		void				setInventory[4] (AMateria const value);
+		std::string			getName(void) const;
+		void				setName(std::string const value);
 
 	private:
-		AMateria			m_inventory[4];
-		std::strig			m_name;
+		AMateria			_inventory[4];
+		std::string			_name;
 };
 
 #endif

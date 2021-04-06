@@ -1,14 +1,14 @@
 #include "Character.hpp"
 
-Character::Character(void) : m_inventory(0), m_name("Default")
+Character::Character(void) : _inventory[4](0), _name("none")
 {
 }
 
-Character::Character(std::string name) : m_inventory(0), m_name(name)
+Character::Character(std::string name) : _inventory(NULL), _name(name)
 {
 }
 
-Character::Character(const Character &rhs)
+Character::Character(const Character &src)
 {
 	*this = rhs;
 }
@@ -19,8 +19,8 @@ Character::~Character(void)
 
 Character			&Character::operator=(const Character &rhs)
 {
-	m_inventory = rhs.m_inventory;
-	m_name = rhs.m_name;
+	this->_inventory[4] = rhs._inventory[4];
+	this->_name = rhs._name;
 	return (*this);
 }
 
@@ -30,22 +30,22 @@ Character			&Character::operator=(const Character &rhs)
 
 	********************************/
 
-AMateria			Character::getInventory(void) const
+//AMateria			Character::getInventory[4](void) const
+//{
+//	return (_inventory[4]);
+//}
+//
+//void				Character::setInventory[4](AMateria const value)
+//{
+//	_inventory[4] = value;
+//}
+
+std::string			Character::getName(void) const
 {
-	return (m_inventory);
+	return (_name);
 }
 
-void				Character::setInventory(AMateria const value, int index)
+void				Character::setName(std::string const value)
 {
-	m_inventory[index] = value;
-}
-
-std::strig			Character::getName(void) const
-{
-	return (m_name);
-}
-
-void				Character::setName(std::strig const value)
-{
-	m_name = value;
+	_name = value;
 }
