@@ -3,24 +3,24 @@
 # include <iostream>
 # include "ICharacter.hpp"
 
-class Character
+class Character : public ICharacter
 {
 	public:
 		Character(void);
+		Character(std::string name);
 		Character(const Character &src);
 		~Character(void);
 		Character			&operator=(const Character &rhs);
 
 //		GETTER // SETTER
 
-//		AMateria			getInventory[4] (void) const;
-//		void				setInventory[4] (AMateria const value);
-		std::string			getName(void) const;
+		std::string			const & getName(void) const;
 		void				setName(std::string const value);
 
 	private:
-		AMateria			_inventory[4];
+		AMateria**			_inventory;
 		std::string			_name;
+		int					_count;
 };
 
 #endif

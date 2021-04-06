@@ -1,16 +1,16 @@
 #include "Character.hpp"
 
-Character::Character(void) : _inventory[4](0), _name("none")
+Character::Character(void) : _inventory(NULL), _name("none"), _count(0)
 {
 }
 
-Character::Character(std::string name) : _inventory(NULL), _name(name)
+Character::Character(std::string name) : _inventory(NULL), _name(name), _count(0)
 {
 }
 
 Character::Character(const Character &src)
 {
-	*this = rhs;
+	*this = src;
 }
 
 Character::~Character(void)
@@ -19,8 +19,23 @@ Character::~Character(void)
 
 Character			&Character::operator=(const Character &rhs)
 {
-	this->_inventory[4] = rhs._inventory[4];
-	this->_name = rhs._name;
+	int i = 0;
+	_name = rhs._name;
+	while (i < _count)
+	{
+		delete _inventory[i];
+		i++;
+	}
+	delete [] _inventory;
+	i = 0;
+	_inventory = new AMateria*[rhs._count];
+	_name = rhs._name;
+	_count = rhs._count;
+	while (i < _count)
+	{
+		_inventory[i] = rhs._inventory[i]->clone();
+		i++;
+	}
 	return (*this);
 }
 
@@ -30,17 +45,7 @@ Character			&Character::operator=(const Character &rhs)
 
 	********************************/
 
-//AMateria			Character::getInventory[4](void) const
-//{
-//	return (_inventory[4]);
-//}
-//
-//void				Character::setInventory[4](AMateria const value)
-//{
-//	_inventory[4] = value;
-//}
-
-std::string			Character::getName(void) const
+std::string	const &	Character::getName(void) const
 {
 	return (_name);
 }
@@ -48,4 +53,15 @@ std::string			Character::getName(void) const
 void				Character::setName(std::string const value)
 {
 	_name = value;
+}
+
+void				Character::equip(AMateria* material)
+{
+	if (_count >= 3)
+		std::cout << "Inventory is full!" << std::endl;
+	else
+	{
+		_inventory[_count] = material;
+		_count++;
+	}
 }
