@@ -1,21 +1,46 @@
 #include "Squad.hpp"
 
-Squad::Squad(void) : _count(0)
+Squad::Squad(void) : _unit(NULL), _count(0)
 {
 }
 
-Squad::Squad(const Squad &rhs)
+Squad::Squad(const ISquad &src) : _unit(NULL), _count(0)
 {
-	*this = rhs;
+	int i = 0;
+	while (i < _count)
+	{
+		push(src.getUnit(i)->clone());
+		i++;
+	}
 }
 
 Squad::~Squad(void)
 {
+	int i = 0;
+	while (i < _count)
+	{
+		delete _unit[i];
+		i++;
+	}
+	delete [] _unit;
 }
 
-Squad		&Squad::operator=(const Squad &rhs)
+Squad		& Squad::operator=(const ISquad &rhs)
 {
-	(void)rhs;
+	int i = 0;
+	while (i < _count)
+	{
+		delete _unit[i];
+		i++;
+	}
+	delete [] _unit;
+	_count = 0;
+	i = 0;
+	while (i < _count)
+	{
+		push(rhs.getUnit(i)->clone());
+		i++;
+	}
 	return (*this);
 }
 
@@ -39,7 +64,7 @@ int			Squad::push(ISpaceMarine* pushUnit) {
 				return _count;
 			i++;
 		}
-		ISpaceMarine* tmp = new ISpaceMarine*[_count + 1];
+		ISpaceMarine** tmp = new ISpaceMarine*[_count + 1];
 		i = 0;
 		while (i < _count)
 		{

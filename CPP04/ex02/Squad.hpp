@@ -7,7 +7,7 @@ class Squad : public ISquad
 {
 	public:
 		Squad(void);
-		Squad(const Squad &rhs);
+		Squad(const ISquad &copy);
 		~Squad(void);
 		Squad				&operator=(const ISquad &rhs);
 		int				getCount(void) const;
@@ -15,8 +15,8 @@ class Squad : public ISquad
 		int				push(ISpaceMarine* unit);
 
 	private:
-		int _count;
 		ISpaceMarine **_unit;
+		int _count;
 
 };
 
