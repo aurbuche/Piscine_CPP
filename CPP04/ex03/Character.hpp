@@ -2,6 +2,10 @@
 # define CHARACTER_HPP
 # include <iostream>
 # include "ICharacter.hpp"
+# include "AMateria.hpp"
+
+class AMateria;
+class ICharacter;
 
 class Character : public ICharacter
 {
@@ -14,8 +18,10 @@ class Character : public ICharacter
 
 //		GETTER // SETTER
 
-		std::string			const & getName(void) const;
-		void				setName(std::string const value);
+		virtual std::string	const &	getName(void) const;
+		void						setName(std::string const value);
+		virtual void				equip(AMateria* material);
+		virtual void				use(int idx, ICharacter& target);
 
 	private:
 		AMateria**			_inventory;

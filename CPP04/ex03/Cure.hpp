@@ -2,6 +2,8 @@
 # define CURE_HPP
 # include "AMateria.hpp"
 
+class AMateria;
+
 class Cure : public AMateria
 {
 	public:
@@ -10,10 +12,9 @@ class Cure : public AMateria
 		~Cure(void);
 		Cure				&operator=(const Cure &rhs);
 
-		Cure*	clone() const;
-		void	use(ICharacter& target);
+		Cure*			clone() const;
+		virtual void	use(ICharacter& target);
 
-	private:
 };
 
 #endif

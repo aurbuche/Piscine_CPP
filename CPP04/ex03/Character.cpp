@@ -6,6 +6,7 @@ Character::Character(void) : _inventory(NULL), _name("none"), _count(0)
 
 Character::Character(std::string name) : _inventory(NULL), _name(name), _count(0)
 {
+	_inventory = new AMateria*[4];
 }
 
 Character::Character(const Character &src)
@@ -15,6 +16,13 @@ Character::Character(const Character &src)
 
 Character::~Character(void)
 {
+	int i = 0;
+	while (i < _count)
+	{
+		delete _inventory[i];
+		i++;
+	}
+	delete [] _inventory;
 }
 
 Character			&Character::operator=(const Character &rhs)
@@ -61,7 +69,13 @@ void				Character::equip(AMateria* material)
 		std::cout << "Inventory is full!" << std::endl;
 	else
 	{
+		std::cout << _count;
 		_inventory[_count] = material;
 		_count++;
 	}
+}
+
+void				Character::use(int idx, ICharacter& target)
+{
+	_inventory[idx]->use(target);
 }

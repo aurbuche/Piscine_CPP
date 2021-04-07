@@ -2,6 +2,8 @@
 # define ICE_HPP
 # include "AMateria.hpp"
 
+class AMateria;
+
 class Ice : public AMateria
 {
 	public:
@@ -10,8 +12,8 @@ class Ice : public AMateria
 		~Ice(void);
 		Ice					&operator=(const Ice &rhs);
 
-		Ice*	clone() const;
-		void	use(ICharacter& target);
+		Ice*			clone() const;
+		virtual void	use(ICharacter& target);
 
 	private:
 };

@@ -32,3 +32,8 @@ unsigned int		AMateria::getXP(void) const
 {
 	return _xp;
 }
+
+void				AMateria::use(ICharacter &target) {
+	_xp += 10;
+	std::cout << "AMateria uses on " << target.getName() << std::endl;
+}
