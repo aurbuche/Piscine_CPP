@@ -20,6 +20,7 @@ protected:
 public:
 	ClapTrap();
 	ClapTrap(std::string name);
+	ClapTrap(std::string n_name, int hp, int mhp, int mana, int mmana, int ad, int adr, int armor);
 	~ClapTrap();
 	ClapTrap(ClapTrap const &copy);
 	ClapTrap& operator=(ClapTrap &assigned);

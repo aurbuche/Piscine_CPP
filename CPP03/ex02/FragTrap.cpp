@@ -1,7 +1,6 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void)
-		:ClapTrap("default", 100, 100, 100, 100, 30, 20, 5)
+FragTrap::FragTrap(void): ClapTrap("default", 100, 100, 100, 100, 30, 20, 5)
 {
 	std::cout << name << " initialized..." << std::endl;
 }
