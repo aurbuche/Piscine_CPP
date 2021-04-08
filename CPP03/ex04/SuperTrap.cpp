@@ -1,7 +1,8 @@
 #include "SuperTrap.hpp"
 
-SuperTrap::SuperTrap(void): ClapTrap("Default", 100, 100, 120, 120, 60, 20, 5), FragTrap("default"),NinjaTrap("default")
+SuperTrap::SuperTrap(void): ClapTrap("default", 0, 0, 0, 0, 0, 0, 0), FragTrap("default"),NinjaTrap("default")
 {
+	setAtt("default");
 	std::cout << " is create!" << std::endl;
 }
 

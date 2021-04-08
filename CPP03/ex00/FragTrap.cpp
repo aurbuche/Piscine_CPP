@@ -37,7 +37,6 @@ FragTrap&       FragTrap::operator=(FragTrap& assigned)
 	MeleeAttackDamage = assigned.MeleeAttackDamage;
 	RangedAttackDamage = assigned.RangedAttackDamage;
 	ArmorDamageReduction = assigned.ArmorDamageReduction;
-	std::cout<<"New FR4G-TP create\n";
 	return *this;
 }
 
@@ -59,7 +58,7 @@ void	FragTrap::takeDamage(unsigned int amount) {
 		std::cout << "FR4G-TP You can't damage with a negative value! Logic no?\n";
 	else
 	{
-		HitPoints = HitPoints + ArmorDamageReduction - amount;
+		HitPoints -= (amount - ArmorDamageReduction);
 		std::cout << "FR4G-TP <" << name << "> take <" << amount << "> of damage. It has now <" << HitPoints << "> of energy point!\n";
 	}
 	std::cout << "Your armor has " << ArmorDamageReduction << " of point of reduction" << std::endl;
@@ -69,7 +68,6 @@ void 	FragTrap::beRepaired(unsigned int amount) {
 	if ((int)amount >= MaxHitPoints)
 	{
 		HitPoints = MaxHitPoints;
-		ArmorDamageReduction = 5;
 		std::cout << "FR4G-TP <" << name << "> " << amount << " is a little bit to much! I will give you the max HP!\n";
 	}
 	else if ((int)amount < 0)
@@ -92,7 +90,7 @@ void	FragTrap::vaulthunter_dot_exe(const std::string &target) {
 	int irand = rand() % 5;
 	if (EnergyPoint > MaxEnergyPoints)
 		EnergyPoint = MaxEnergyPoints;
-	if (EnergyPoint > 25)
+	if (EnergyPoint >= 25)
 	{
 		if (irand == 0)
 			std::cout << name << " just used his super laser that throws rainbows, " << target << " is stunned!" << std::endl;
