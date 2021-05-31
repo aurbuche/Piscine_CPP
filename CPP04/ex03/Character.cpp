@@ -69,9 +69,16 @@ void				Character::equip(AMateria* material)
 		std::cout << "Inventory is full!" << std::endl;
 	else
 	{
-		std::cout << _count;
 		_inventory[_count] = material;
 		_count++;
+	}
+}
+
+void	Character::unequip(int idx) {
+	if (idx >= 0 && idx < this->_count)
+	{
+		this->_inventory[idx] = 0;
+		this->_count--;
 	}
 }
 

@@ -1,16 +1,27 @@
 #include "MateriaSource.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
-MateriaSource::MateriaSource(void)
-{
+MateriaSource::MateriaSource() : _count(0) {
+	std::memset(this->_inventorySource, 0, 4);
+
+	return;
 }
 
-MateriaSource::MateriaSource(const MateriaSource &src)
-{
-	*this = src;
+MateriaSource::MateriaSource(const MateriaSource &copy) : _count(copy._count) {
+	for (int i = 0; i < 4; i++)
+		this->_inventorySource[i] = copy._inventorySource[i];
+
+	return;
 }
 
-MateriaSource::~MateriaSource(void)
-{
+MateriaSource::~MateriaSource() {
+	for (int i = 0; i < this->_count; i++)
+	{
+		delete this->_inventorySource[i];
+		this->_inventorySource[i] = 0;
+	}
+	return;
 }
 
 MateriaSource & MateriaSource::operator=( MateriaSource const & rhs )

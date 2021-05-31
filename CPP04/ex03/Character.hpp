@@ -21,6 +21,7 @@ class Character : public ICharacter
 		virtual std::string	const &	getName(void) const;
 		void						setName(std::string const value);
 		virtual void				equip(AMateria* material);
+		virtual void				unequip(int idx);
 		virtual void				use(int idx, ICharacter& target);
 
 	private:
