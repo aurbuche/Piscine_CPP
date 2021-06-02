@@ -1,46 +1,54 @@
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+//#include "PresidentialPardonForm.hpp"
+//#include "RobotomyRequestForm.hpp"
 
 int main()
 {
-
+	srand(time(NULL));
 	try
 	{
-		Bureaucrat tmp1("tups1", 2);
-		Bureaucrat tmp2("tups2", 140);
-		Form        forming("contrat", 15);
-		Form        fromat("test", 25);
+		Bureaucrat	gerard("Gerard", 46);
+		Bureaucrat	didier("Didier", 149);
+		Bureaucrat	ginette("Ginette", 2);
 
-		std::cout<<tmp1;
-		tmp1.incrementation();
-		std::cout<<tmp1;
-		std::cout<<tmp2;
-		tmp2.decrementation();
-		std::cout<<tmp2;
+//		RobotomyRequestForm		form1("Stroheim");
+//		PresidentialPardonForm	form2("Jean-Castex");
+		ShrubberyCreationForm	form3("home");
 
-		std::cout<<fromat;
-		tmp1.signForm(fromat);
-		tmp1.signForm(forming);
-		tmp2.signForm(fromat);
-		std::cout<<fromat;
+		std::cout << gerard << didier << ginette;
+		gerard.signForm(form3);
+//		ginette.signForm(form2);
+//		ginette.signForm(form1);
+//		form1.execute(gerard);
+//		form2.execute(gerard);
+		form3.execute(didier);
+//		gerard.executeForm(form3);
+//		ginette.executeForm(form2);
+//		ginette.executeForm(form1);
+
+
+
 	}
-	catch(const Bureaucrat::GradeTooLowExceptions& e)
+	catch (const Bureaucrat::GradeTooLowExceptions& e)
 	{
-		std::cout<< e.what() << std::endl;
-		return (1);
-	}catch(const Bureaucrat::GradeTooHighExceptions& e)
-	{
-		std::cout<< e.what() << std::endl;
-		return (1);
-	}
-	catch(const Form::GradeTooLowExceptions& e)
-	{
-		std::cout<< e.what() << std::endl;
-		return (1);
-	}
-	catch(const Form::GradeTooHighExceptions& e)
-	{
-		std::cout<< e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 		return (1);
 	}
+	catch (const Bureaucrat::GradeTooHighExceptions& e)
+	{
+		std::cout << e.what() << std::endl;
+		return (1);
+	}
+	catch (const Form::GradeTooLowExceptions& e)
+	{
+		std::cout << e.what() << std::endl;
+		return (1);
+	}
+	catch (const Form::GradeTooHighExceptions& e)
+	{
+		std::cout << e.what() << std::endl;
+		return (1);
+	}
+
+	return (0);
 }

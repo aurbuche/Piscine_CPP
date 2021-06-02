@@ -1,26 +1,27 @@
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
-# include <iostream>
-# include <string>
 # include "Form.hpp"
 
 class ShrubberyCreationForm: public Form
 {
 	public:
-		ShrubberyCreationForm(void);
+		ShrubberyCreationForm(const std::string &target);
 		ShrubberyCreationForm(const ShrubberyCreationForm &rhs);
 		~ShrubberyCreationForm(void);
 		ShrubberyCreationForm			&operator=(const ShrubberyCreationForm &rhs);
 
-//		GETTER // SETTER
+		//		GETTER // SETTER
 
-		int					getsignGrade(void) const;
-		void				setsignGrade(int const value);
-		int					getexecGrade(void) const;
-		void				setexecGrade(int const value);
+		unsigned int		getsignGrade(void) const;
+		void				setsignGrade(int value);
+		unsigned int		getexecGrade(void) const;
+		void				setexecGrade(int value);
+		void				createTreeFile();
+		virtual void		execute(Bureaucrat const &executor) const;
 
 	private:
-		std::string			target;
+		ShrubberyCreationForm(void);
+		std::string			m_target;
 };
 
 #endif

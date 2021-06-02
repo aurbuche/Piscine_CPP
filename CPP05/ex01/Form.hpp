@@ -17,7 +17,7 @@ class Form
 		unsigned int		getSignGrade(void) const;
 		unsigned int		getExecGrade(void) const;
 		int					getSigned(void) const;
-		void				setSigned(int sign);
+		void				setSigned();
 		std::string			getName(void) const;
 		void				beSigned(const Bureaucrat &target);
 

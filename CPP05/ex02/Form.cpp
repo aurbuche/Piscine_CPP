@@ -1,6 +1,6 @@
-#include "Form.hpp"
+ #include "Form.hpp"
 
-Form::Form(std::string const& Name, unsigned int Grade): m_name(Name), m_signed(0), m_signGrade(Grade), m_execGrade(0)
+Form::Form(std::string const& Name, unsigned int Grade, unsigned int execGrade): m_name(Name), m_signed(0), m_signGrade(Grade), m_execGrade(execGrade)
 {
 	if (Grade < 1)
 		throw Form::GradeTooHighExceptions();
@@ -49,9 +49,9 @@ int					Form::getSigned(void) const
 	return (m_signed);
 }
 
-void				Form::setSigned(int sign)
+void				Form::setSigned()
 {
-	m_signed = sign;
+	m_signed = 1;
 }
 
 
@@ -66,7 +66,7 @@ void Form::beSigned(const Bureaucrat &target) {
 	else
 	{
 		std::cout << target.getName() << " signed form " << this->m_name << std::endl;
-		this->setSigned(1);
+		this->setSigned();
 	}
 	return;
 }

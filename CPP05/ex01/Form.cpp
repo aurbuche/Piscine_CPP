@@ -49,9 +49,9 @@ int					Form::getSigned(void) const
 	return (m_signed);
 }
 
-void				Form::setSigned(int sign)
+void				Form::setSigned()
 {
-	m_signed = sign;
+	m_signed = 1;
 }
 
 
@@ -66,7 +66,7 @@ void Form::beSigned(const Bureaucrat &target) {
 	else
 	{
 		std::cout << target.getName() << " signed form " << this->m_name << std::endl;
-		this->setSigned(1);
+		this->setSigned();
 	}
 	return;
 }
