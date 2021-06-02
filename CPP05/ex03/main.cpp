@@ -1,6 +1,8 @@
+#include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
@@ -15,6 +17,9 @@ int main()
 		PresidentialPardonForm	form2("Jean-Castex");
 		ShrubberyCreationForm	form3("home");
 
+		Form	*internForm;
+		Intern	trainee;
+
 		std::cout << lukas << aurelien << patrick;
 		lukas.signForm(form1);
 		aurelien.signForm(form2);
@@ -26,8 +31,10 @@ int main()
 		aurelien.executeForm(form2);
 		patrick.executeForm(form3);
 
-
-
+		internForm = trainee.makeForm("presidential request", "Aimpety");
+		aurelien.signForm(*internForm);
+		internForm->execute(aurelien);
+		delete internForm;
 	}
 	catch (const Bureaucrat::GradeTooLowExceptions& e)
 	{
