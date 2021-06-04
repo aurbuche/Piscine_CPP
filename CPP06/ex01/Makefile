@@ -14,7 +14,7 @@ RM			=	rm -rf
 
 FLAGS		=	-Wall -Werror -Wextra #-fsanitize=address
 
-all:		$(NAME) $(OBJ_PATH)
+all:		$(NAME)
 
 $(NAME):	$(OBJ) Makefile
 	@clang++ $(FLAGS) $(SRCS) -o $(NAME)
@@ -22,10 +22,6 @@ $(NAME):	$(OBJ) Makefile
 
 clean:
 	@${RM} *.o
-
-$(OBJ_PATH)%.o: %.cpp Makefile
-	@printf "\033[2K\r$(LIGHT_RED)Compiling...	\033[37m$<\033[36m \033[0m"
-	@clang++ $(FLAGS) -o $@ -c $< -I $(HEADER)
 
 fclean: clean
 	@${RM} ${NAME}
