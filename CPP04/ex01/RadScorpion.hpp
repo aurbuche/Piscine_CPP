@@ -7,7 +7,7 @@ class RadScorpion : public Enemy
 	public:
 		RadScorpion(void);
 		RadScorpion(const RadScorpion &rhs);
-		~RadScorpion(void);
+		virtual ~RadScorpion(void);
 		RadScorpion			&operator=(const RadScorpion &rhs);
 
 //		GETTER // SETTER

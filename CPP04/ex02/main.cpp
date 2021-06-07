@@ -28,7 +28,7 @@ int                     main( void )
 	vlc->getUnit(0)->meleeAttack();
 	vlc->getUnit(1)->meleeAttack();
 
-	std::cout << "__________________________________________________\n";
+	std::cout << "\n__________________________________________________\n";
 	delete vlc;
 	return 0;
 }

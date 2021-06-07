@@ -65,6 +65,8 @@ void				Character::setWeapon(AWeapon const *value)
 }
 
 void				Character::recoverAP() {
+	if (m_AP >= 40)
+		std::cout << "Error: You have already 40 or more AP, I don\'t give you more!\n";
 	if (m_AP < 40)
 		m_AP += 10;
 	if (m_AP > 40)

@@ -5,9 +5,9 @@ Bureaucrat::Bureaucrat(){}
 Bureaucrat::Bureaucrat(std::string name, int grade) : m_Name(name), m_Grade(grade)
 {
 	if (grade < 1)
-		Bureaucrat::GradeTooHighExceptions();
+		throw Bureaucrat::GradeTooHighExceptions();
 	if (grade > 150)
-		Bureaucrat::GradeTooLowExceptions();
+		throw Bureaucrat::GradeTooLowExceptions();
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &rhs)
@@ -65,7 +65,7 @@ void				Bureaucrat::signForm(Form &form)
 			throw Bureaucrat::GradeTooLowExceptions();
 		else
 		{
-			form.setSigned(1);
+			form.setSigned();
 			std::cout<< m_Name << " signs " << form.getName()<< std::endl;
 		}
 	}

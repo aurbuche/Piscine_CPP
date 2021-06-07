@@ -1,14 +1,10 @@
 #include "Peon.hpp"
 
-Peon::Peon(void){
-	std::cout << "Zog Zog." << std::endl;
-}
-
 Peon::Peon(std::string name): Victim(name){
 	std::cout << "Zog Zog." << std::endl;
 }
 
-Peon::Peon(const Peon &rhs){
+Peon::Peon(const Peon &rhs): Victim (rhs){
 	*this = rhs;
 }
 

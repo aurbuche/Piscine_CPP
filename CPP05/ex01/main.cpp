@@ -28,7 +28,8 @@ int main()
 	{
 		std::cout<< e.what() << std::endl;
 		return (1);
-	}catch(const Bureaucrat::GradeTooHighExceptions& e)
+	}
+	catch(const Bureaucrat::GradeTooHighExceptions& e)
 	{
 		std::cout<< e.what() << std::endl;
 		return (1);

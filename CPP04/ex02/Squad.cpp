@@ -4,12 +4,12 @@ Squad::Squad(void) : _unit(NULL), _count(0)
 {
 }
 
-Squad::Squad(const ISquad &src) : _unit(NULL), _count(0)
+Squad::Squad(const ISquad &copy) : _unit(NULL), _count(0)
 {
 	int i = 0;
 	while (i < _count)
 	{
-		push(src.getUnit(i)->clone());
+		push(copy.getUnit(i)->clone());
 		i++;
 	}
 }
@@ -36,7 +36,7 @@ Squad		& Squad::operator=(const ISquad &rhs)
 	delete [] _unit;
 	_count = 0;
 	i = 0;
-	while (i < _count)
+	while (i < rhs.getCount())
 	{
 		push(rhs.getUnit(i)->clone());
 		i++;

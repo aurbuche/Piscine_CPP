@@ -5,19 +5,20 @@
 
 class Victim
 {
-public:
-	Victim(void);
-	Victim(std::string const name);
-	Victim(const Victim &rhs);
-	~Victim(void);
-	Victim				&operator=(const Victim &rhs);
-	void	getPolymorphed() const;
+	public:
+		Victim(std::string const name);
+		Victim(const Victim &rhs);
+		virtual ~Victim(void);
+		Victim				&operator=(const Victim &rhs);
+		virtual void		getPolymorphed() const;
 
-	std::string			getName(void) const;
-	void				setName(std::string const value);
+		std::string			getName(void) const;
+		void				setName(std::string const value);
 
-private:
-	std::string			m_name;
+	protected:
+		std::string			m_name;
+	private:
+		Victim(void);
 };
 std::ostream &	operator<<(std::ostream & o, Victim const & victim);
 

@@ -1,14 +1,10 @@
 #include "Victim.hpp"
 
-Victim::Victim(void) : m_name("none"){
-	std::cout << "Some random victim called " << m_name << " just appeared" << std::endl;
-}
-
 Victim::Victim(std::string const name): m_name(name) {
 	std::cout << "Some random victim called " << m_name << " just appeared" << std::endl;
 }
 
-Victim::Victim(const Victim &rhs)
+Victim::Victim(const Victim &rhs) : m_name(rhs.m_name)
 {
 	*this = rhs;
 }
