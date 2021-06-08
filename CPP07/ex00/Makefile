@@ -13,6 +13,8 @@ YELLOW = \033[0;33m
 
 SRCS		=	main.cpp
 
+OBJ			=	$(SRCS:.cpp=.o)
+
 NAME		=	test
 
 RM			=	rm -rf
