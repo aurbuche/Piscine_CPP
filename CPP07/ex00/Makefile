@@ -23,7 +23,7 @@ FLAGS		=	-Wall -Werror -Wextra #-fsanitize=address
 
 all:		$(NAME)
 
-$(NAME):	Makefile
+$(NAME):	$(OBJ) Makefile
 	@clang++ $(FLAGS) $(SRCS) -o $(NAME)
 	@printf "	\033[2K\r$(DARK_BLUE)$(NAME)\t: $(LIGHT_GREEN)Updated\n\033[0m"
 
