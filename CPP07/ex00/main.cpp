@@ -37,7 +37,7 @@ int main( void ) {
 	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
 	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 	std::cout << "-------------------------------\n";
-	std::cout << "min( e, f ) =" << ::min( e, f ) << std::endl;
+	std::cout << "min( e, f ) = " << ::min( e, f ) << std::endl;
 	std::cout << "max( e, f ) = " << ::max( e, f ) << std::endl;
 	std::cout << "-------------------------------\n";
 	return 0;
