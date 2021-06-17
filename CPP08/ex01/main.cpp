@@ -4,6 +4,7 @@ int main()
 {
 	try
 	{
+		srand(time(0));
 		Span sp = Span(5);
 		sp.addNumber(5);
 		sp.addNumber(17);
@@ -13,14 +14,12 @@ int main()
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
 		std::cout << "-----------------\n";
-		Span sp2 = Span(5);
-		std::vector<int> tab = {1, 68, 2, 95, 63, 47, 25};
-		tab.push_back(50);
-		tab.push_back(19);
+		Span sp2 = Span(1000);
+		std::vector<int> tab(1000, 0);
+		for (unsigned int i = 0; i < tab.size(); i++)
+			tab[i] = rand() % 500;
 		sp2.addMoreNumber(tab.begin(), tab.end());
 		std::cout << "Size : " << tab.size() << "\n";
-		sp2.addNumber(3);
-		sp2.addNumber(3);
 		std::cout << sp2.shortestSpan() << std::endl;
 		std::cout  << sp2.longestSpan() << std::endl;
 	}

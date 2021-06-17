@@ -27,23 +27,24 @@ void				Span::addNumber(int n)
 	m_tab.push_back(n);
 }
 
-void				Span::addMoreNumber(std::vector<int> begin, std::vector<int> end)
+void				Span::addMoreNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
 {
 	if (end - begin <= m_n)
-	{}
+		m_tab.assign(begin, end);
 	else
+		throw CapacityException();
 }
 
 int					Span::longestSpan()
 {
-	if (m_tab.empty())
+	if (m_tab.empty() || m_tab.size() == 1)
 		throw NotEnoughNbException();
 	return (*max_element(m_tab.begin(), m_tab.end()) - *min_element(m_tab.begin(), m_tab.end()));
 }
 
 int					Span::shortestSpan()
 {
-	if (m_tab.empty())
+	if (m_tab.empty() || m_tab.size() == 1)
 		throw NotEnoughNbException();
 	int	diff = INT_MAX;
 	for (unsigned long i = 0; i < m_tab.size() - 1;i++)

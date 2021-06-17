@@ -16,7 +16,7 @@ int 	main(void)
 	}
 	catch (std::exception e)
 	{
-		std::cerr << "The number hasn\'t been found!\n";
+		std::cerr << "The occurence hasn\'t been found!\n";
 	}
 	try
 	{
@@ -25,6 +25,6 @@ int 	main(void)
 	}
 	catch (std::exception e)
 	{
-		std::cerr << "The number hasn\'t been found!\n";
+		std::cerr << "The occurence hasn\'t been found!\n";
 	}
 }

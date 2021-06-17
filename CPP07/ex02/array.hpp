@@ -37,12 +37,8 @@ public:
 	};
 	Array & operator=(const Array & copy)
 	{
-		if (this == &copy)
-			return (*this);
-		delete m_array;
 		m_nElement = copy.m_nElement;
-		for (int i = 0; i < m_nElement; i++)
-			delete
+		delete m_array;
 		if (copy.m_nElement == 0)
 			m_array = new T;
 		else
@@ -68,11 +64,6 @@ public:
 			throw std::exception();
 		return m_array[i];
 	};
-
-	unsigned int		get()
-	{
-		return (m_nElement);
-	}
 
 	unsigned int	size()
 	{
